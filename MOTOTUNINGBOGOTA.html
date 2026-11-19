@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>MotoTuning Bogotá | Accesorios de Lujo para Motos</title>
+    
+    <!-- Favicon con tu logo -->
+    <link rel="icon" type="image/png" href="logo-mtb.png" />
+
+    <!-- Tailwind CSS vía CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700;800&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    
+    <style>
+        /* ============================================
+           ESTILOS MOTOTUNING BOGOTÁ
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .font-racing {
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.05em;
+        }
+
+        :root {
+            --turquesa: #00E5FF;
+            --turquesa-oscuro: #00B8D4;
+            --turquesa-glow: rgba(0, 229, 255, 0.4);
+            --negro: #050505;
+            --gris-oscuro: #0f0f0f;
+            --gris-medio: #1a1a1a;
+        }
+
+        /* ============================================
+           LOGO NAVBAR Y FOOTER
+           ============================================ */
+        .logo-navbar {
+            height: 65px;
+            width: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            mix-blend-mode: screen;
+            filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.4));
+        }
+        .logo-navbar:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.8));
+        }
+
+        .logo-footer {
+            height: 80px;
+            width: auto;
+            mix-blend-mode: screen;
+            filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.3));
+            margin-bottom: 0.5rem;
+        }
+
+        /* ============================================
+           MINIATURA DEL LOGO RECORTADO (Solo el escudo MTB)
+           ============================================ */
+        .hero-logo-top {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            margin: 0 auto 1.5rem auto;
+            mix-blend-mode: screen;
+            filter: drop-shadow(0 0 25px rgba(0, 229, 255, 0.7));
+            animation: pulseMiniLogo 3s infinite alternate ease-in-out;
+            clip-path: inset(0% 0% 40% 0%);
+        }
+
+        @keyframes pulseMiniLogo {
+            0% { transform: scale(1); filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.5)); }
+            100% { transform: scale(1.05); filter: drop-shadow(0 0 45px rgba(0, 229, 255, 1)); }
+        }
+
+        .neon-btn {
+            box-shadow: 0 0 15px #00E5FF, 0 0 30px #00E5FF, 0 0 60px rgba(0, 229, 255, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid #00E5FF;
+            background: rgba(0, 229, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+        .neon-btn:hover {
+            box-shadow: 0 0 25px #00E5FF, 0 0 50px #00E5FF, 0 0 80px rgba(0, 229, 255, 0.4);
+            transform: scale(1.05);
+            background: #00E5FF;
+            color: #050505;
+        }
+
+        /* ============================================
+           HERO SECTION (Imagen o video de fondo personalizable)
+           ============================================ */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #050505;
+            padding-top: 60px;
+        }
+
+        .hero-media {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+            opacity: 0.25;
+            mix-blend-mode: screen;
+            animation: zoomHero 20s infinite alternate ease-in-out;
+        }
+
+        .hero-media.video {
+            object-fit: cover;
+            opacity: 0.35;
+            mix-blend-mode: normal;
+        }
+
+        @keyframes zoomHero {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 10%, #050505 90%),
+                        linear-gradient(180deg, transparent 40%, #050505 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 40vh;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(0.9rem, 2vw, 1.3rem);
+            color: #ddd;
+            letter-spacing: 8px;
+            font-weight: 500;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.9);
+            background: rgba(5,5,5,0.5);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+        }
+
+        .cta-group {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        /* ============================================
+           FILTROS Y TARJETAS
+           ============================================ */
+        .filter-btn {
+            background: transparent;
+            border: 2px solid #222;
+            color: #888;
+            padding: 0.5rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .filter-btn:hover {
+            border-color: #00E5FF;
+            color: #00E5FF;
+            transform: translateY(-2px);
+        }
+        .filter-btn.active {
+            background: #00E5FF;
+            border-color: #00E5FF;
+            color: #050505;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+        }
+
+        .product-card {
+            background: #0f0f0f;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            border: 1px solid #1a1a1a;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            border-color: #00E5FF;
+            box-shadow: 0 10px 40px rgba(0, 229, 255, 0.15);
+        }
+        .product-card .image-container {
+            position: relative;
+            overflow: hidden;
+            background: #111;
+        }
+        .product-card .image-container img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .product-card:hover .image-container img {
+            transform: scale(1.08);
+        }
+        .product-card .tag-categoria {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(6px);
+            color: #00E5FF;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            border: 1px solid #00E5FF;
+            letter-spacing: 0.08em;
+            z-index: 2;
+        }
+        .product-card .product-info {
+            padding: 1.2rem 1.2rem 1.5rem;
+        }
+        .product-card .product-info h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.02em;
+        }
+        .product-card .product-info .precio {
+            color: #00E5FF;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        .product-card .btn-detalle {
+            background: transparent;
+            border: 1px solid #00E5FF;
+            color: #00E5FF;
+            font-weight: 600;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .product-card .btn-detalle:hover {
+            background: #00E5FF;
+            color: #050505;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+        }
+
+        /* ============================================
+           MODAL, ADMIN Y UTILIDADES
+           ============================================ */
+        #modal { animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #00E5FF; border-radius: 10px; }
+
+        .admin-panel {
+            background: #0f0f0f;
+            border: 1px solid #00E5FF;
+            border-radius: 16px;
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.05);
+        }
+        .admin-panel input, .admin-panel select, .admin-panel textarea {
+            background: #050505;
+            border: 1px solid #222;
+            color: #fff;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            width: 100%;
+            transition: border-color 0.3s;
+            font-size: 0.9rem;
+        }
+        .admin-panel input:focus, .admin-panel select:focus, .admin-panel textarea:focus {
+            border-color: #00E5FF;
+            outline: none;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+        }
+        .admin-panel label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.3rem;
+            display: block;
+            color: #888;
+            letter-spacing: 0.03em;
+        }
+        .admin-panel .btn-admin {
+            background: #00E5FF;
+            color: #050505;
+            font-weight: 700;
+            padding: 0.6rem 2rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+        .admin-panel .btn-admin:hover {
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+            transform: scale(1.02);
+        }
+        .admin-panel .btn-admin-secondary { background: #222; color: #fff; }
+        .admin-panel .btn-admin-secondary:hover { background: #333; box-shadow: none; }
+        .admin-panel .btn-admin-success { background: #22c55e; color: #fff; }
+        .admin-panel .btn-admin-success:hover { background: #16a34a; box-shadow: 0 0 20px rgba(34, 197, 94, 0.3); }
+        
+        .admin-panel .producto-admin {
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid #1a1a1a; padding: 0.6rem 0;
+        }
+        .admin-panel .producto-admin span { font-size: 0.9rem; }
+        .admin-panel .producto-admin .acciones button {
+            margin-left: 0.5rem; background: transparent; border: none; cursor: pointer;
+            font-size: 1rem; transition: transform 0.2s;
+        }
+        .admin-panel .producto-admin .acciones button:hover { transform: scale(1.2); }
+        .admin-panel .producto-admin .acciones .editar { color: #00E5FF; }
+        .admin-panel .producto-admin .acciones .eliminar { color: #ff4444; }
+        
+        #adminSection { display: none; }
+        #adminSection.visible { display: block; }
+
+        .social-link {
+            transition: all 0.3s ease;
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 48px; height: 48px; border-radius: 50%;
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+            text-decoration: none; color: #888; cursor: pointer; position: relative;
+        }
+        .social-link:hover {
+            transform: translateY(-4px); border-color: #00E5FF; color: #00E5FF;
+            background: rgba(0, 229, 255, 0.08); box-shadow: 0 0 25px rgba(0, 229, 255, 0.1);
+        }
+        .social-link i { font-size: 1.3rem; pointer-events: none; }
+        .social-link .tooltip {
+            position: absolute; bottom: -32px; left: 50%; transform: translateX(-50%);
+            background: #1a1a1a; color: #fff; padding: 2px 12px; border-radius: 4px;
+            font-size: 0.55rem; white-space: nowrap; opacity: 0; pointer-events: none;
+            transition: opacity 0.3s; border: 1px solid #00E5FF; font-weight: 400; letter-spacing: 0.05em;
+        }
+        .social-link:hover .tooltip { opacity: 1; }
+
+        @media (max-width: 768px) {
+            .logo-navbar { height: 45px; }
+            .hero-logo-top { max-width: 220px; }
+            .product-card .image-container img { height: 220px; }
+            .admin-panel { padding: 1rem; }
+            .hero-subtitle { letter-spacing: 4px; font-size: 0.8rem;}
+            .hero-content { margin-top: 35vh; }
+        }
+
+        .toast {
+            position: fixed; bottom: 25px; right: 25px; background: #00E5FF; color: #050505;
+            padding: 14px 28px; border-radius: 12px; font-weight: 600; box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+            z-index: 9999; animation: slideUp 0.3s ease; display: none; max-width: 90%; font-size: 0.9rem;
+        }
+        .toast.success { background: #22c55e; color: #fff; }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .admin-tabs {
+            display: flex; gap: 0.5rem; margin-bottom: 1.5rem;
+            border-bottom: 2px solid #1a1a1a; padding-bottom: 0.5rem; flex-wrap: wrap;
+        }
+        .admin-tab {
+            padding: 0.5rem 1.5rem; border-radius: 50px; cursor: pointer; transition: all 0.3s;
+            font-weight: 600; font-size: 0.85rem; background: transparent; color: #666; border: none;
+        }
+        .admin-tab:hover { color: #fff; background: rgba(255,255,255,0.03); }
+        .admin-tab.active { background: #00E5FF; color: #050505; }
+        .admin-tab-content { display: none; }
+        .admin-tab-content.active { display: block; }
+
+        .social-input-group { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .social-input-group .full-width { grid-column: 1 / -1; }
+        @media (max-width: 768px) { .social-input-group { grid-template-columns: 1fr; } }
+
+        .image-preview {
+            max-width: 120px; max-height: 120px; border-radius: 8px;
+            border: 2px solid #222; margin-top: 5px; object-fit: cover;
+        }
+        .file-input-wrapper { display: flex; flex-direction: column; gap: 8px; }
+
+        .racing-stripe {
+            height: 3px; background: linear-gradient(90deg, transparent, #00E5FF, transparent);
+            margin: 0 auto; width: 80%; border-radius: 50%;
+        }
+        .section-title {
+            font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+        }
+        .badge-lujo {
+            background: linear-gradient(135deg, #00E5FF20, #00E5FF05);
+            border: 1px solid #00E5FF40; color: #00E5FF; font-size: 0.6rem;
+            padding: 0.2rem 0.8rem; border-radius: 50px; letter-spacing: 0.1em; text-transform: uppercase;
+        }
+
+        /* Categorías Admin */
+        .categoria-admin-item {
+            display: flex; justify-content: space-between; align-items: center;
+            background: #050505; border: 1px solid #1a1a1a; border-radius: 10px;
+            padding: 0.8rem 1rem; margin-bottom: 0.5rem; transition: all 0.3s ease;
+        }
+        .categoria-admin-item:hover {
+            border-color: #00E5FF; box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+        }
+        .categoria-admin-item .info { display: flex; align-items: center; gap: 0.8rem; flex: 1; min-width: 0; }
+        .categoria-admin-item .color-dot {
+            width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; border: 2px solid rgba(255,255,255,0.1);
+        }
+        .categoria-admin-item .nombre { font-weight: 600; color: #fff; font-size: 0.95rem; }
+        .categoria-admin-item .slug {
+            font-size: 0.7rem; color: #666; font-family: monospace; background: #0f0f0f;
+            padding: 0.15rem 0.6rem; border-radius: 4px; margin-left: 0.5rem;
+        }
+        .categoria-admin-item .contador {
+            font-size: 0.7rem; color: #00E5FF; background: rgba(0, 229, 255, 0.1);
+            padding: 0.15rem 0.7rem; border-radius: 50px; border: 1px solid rgba(0, 229, 255, 0.2); white-space: nowrap;
+        }
+        .categoria-admin-item .acciones { display: flex; gap: 0.3rem; flex-shrink: 0; }
+        .categoria-admin-item .acciones button {
+            background: transparent; border: none; cursor: pointer; font-size: 0.95rem;
+            padding: 0.3rem 0.5rem; border-radius: 6px; transition: all 0.2s;
+        }
+        .categoria-admin-item .acciones button:hover { background: rgba(255,255,255,0.05); transform: scale(1.1); }
+        .categoria-admin-item .acciones .editar { color: #00E5FF; }
+        .categoria-admin-item .acciones .eliminar { color: #ff4444; }
+        .categoria-admin-item .acciones button:disabled { opacity: 0.3; cursor: not-allowed; }
+        .categoria-admin-item .acciones button:disabled:hover { background: transparent; transform: none; }
+
+        .color-picker-wrapper { display: flex; gap: 0.5rem; align-items: center; }
+        .color-picker-wrapper input[type="color"] {
+            width: 50px; height: 42px; padding: 2px; cursor: pointer;
+            border-radius: 8px; background: #050505; border: 1px solid #222;
+        }
+        .color-picker-wrapper input[type="text"] { flex: 1; }
+
+        .empty-categorias { text-align: center; padding: 2rem 1rem; color: #666; }
+        .empty-categorias i { font-size: 3rem; opacity: 0.3; margin-bottom: 0.5rem; display: block; }
+
+        .categoria-preview-badge {
+            display: inline-block; padding: 0.3rem 1rem; border-radius: 50px;
+            font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.08em; border: 1px solid currentColor; background: rgba(0,0,0,0.3);
+        }
+
+        /* Hero admin preview */
+        .hero-preview-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .hero-preview-media {
+            width: 160px;
+            height: 100px;
+            border-radius: 10px;
+            border: 2px solid #222;
+            object-fit: cover;
+            background: #050505;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #444;
+            font-size: 2rem;
+        }
+        .hero-preview-media img,
+        .hero-preview-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .hero-media-badge {
+            font-size: 0.65rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 50px;
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            color: #00E5FF;
+            display: inline-block;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== TOAST ========== -->
+    <div id="toast" class="toast"></div>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#050505]/95 backdrop-blur-md border-b border-[#00E5FF]/20 py-2 px-4 md:px-6 flex items-center justify-between">
+        <div class="navbar-logo flex items-center">
+            <!-- LOGO NAVBAR (Doble clic para admin) -->
+            <img id="logo" src="logo-mtb.png" alt="MotoTuning Bogotá Logo" class="logo-navbar" title="Doble clic para administrar" onerror="this.src='https://via.placeholder.com/150x60/050505/00E5FF?text=MTB'" />
+        </div>
+        <div class="hidden md:flex space-x-8 text-xs uppercase tracking-[0.12em] font-semibold">
+            <a href="#inicio" class="hover:text-[#00E5FF] transition-colors">Inicio</a>
+            <a href="#catalogo" class="hover:text-[#00E5FF] transition-colors">Catálogo</a>
+            <a href="#contacto" class="hover:text-[#00E5FF] transition-colors">Contacto</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <a href="#" class="text-xl hover:text-[#00E5FF] transition-colors">
+                <i class="fas fa-shopping-bag"></i>
+            </a>
+            <button id="adminToggle" class="text-xs bg-[#00E5FF] text-[#050505] px-3 py-1.5 rounded-full font-bold hidden hover:shadow-lg transition-all">
+                <i class="fas fa-cog"></i> <span class="hidden sm:inline">Admin</span>
+            </button>
+            <button id="menuToggle" class="md:hidden text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section id="inicio" class="hero-section">
+        <!-- Contenedor del media de fondo (imagen o video) -->
+        <div id="heroMediaContainer" class="absolute inset-0 w-full h-full" style="z-index:0;">
+            <!-- Se inyecta dinámicamente desde JS -->
+        </div>
+        
+        <!-- Capa oscura -->
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <!-- 🔥 MINIATURA DEL LOGO RECORTADO 🔥 -->
+            <img src="logo-mtb.png" alt="MTB Logo" class="hero-logo-top" onerror="this.style.display='none'" />
+            
+            <!-- Texto de Lujo & Rendimiento -->
+            <div class="mb-6">
+                <span class="badge-lujo"><i class="fas fa-crown mr-1"></i> Lujo & Rendimiento</span>
+            </div>
+            
+            <p class="hero-subtitle">ACCESORIOS DE LUJO PARA MOTOS</p>
+            
+            <!-- Botones -->
+            <div class="cta-group">
+                <a href="#catalogo" class="neon-btn inline-block px-8 py-4 text-[#00E5FF] font-bold uppercase tracking-[0.15em] text-sm hover:text-[#050505] transition-all duration-300 rounded-full">
+                    <i class="fas fa-arrow-right mr-2"></i> Explorar catálogo
+                </a>
+                <a href="#catalogo" class="inline-block px-8 py-4 border-2 border-white/20 text-white font-bold uppercase tracking-[0.15em] text-sm hover:border-[#00E5FF] hover:text-[#00E5FF] transition-all duration-300 rounded-full backdrop-blur-md bg-black/30">
+                    <i class="fas fa-play mr-2"></i> Ver colección
+                </a>
+            </div>
+            
+            <div class="racing-stripe mt-12 w-full max-w-md"></div>
+        </div>
+    </section>
+
+    <!-- ========== CATÁLOGO ========== -->
+    <section id="catalogo" class="py-16 px-4 md:px-6 bg-[#050505]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="section-title text-4xl md:text-5xl font-bold text-white uppercase text-center mb-2 tracking-wider">
+                <span class="text-[#00E5FF]">//</span> Catálogo <span class="text-[#00E5FF]">//</span>
+            </h2>
+            <p class="text-center text-gray-500 text-sm tracking-[0.1em] mb-10">Filtra por categoría y encuentra el accesorio perfecto para tu moto</p>
+
+            <!-- Filtros dinámicos -->
+            <div id="filterContainer" class="flex flex-wrap justify-center gap-2 md:gap-3 mb-12">
+                <!-- Renderizado desde JS -->
+            </div>
+
+            <!-- Admin Panel -->
+            <div id="adminSection">
+                <div class="admin-panel">
+                    <h3 class="text-xl font-racing text-[#00E5FF] mb-4"><i class="fas fa-cog"></i> Panel de Administración</h3>
+                    <div class="admin-tabs">
+                        <button class="admin-tab active" data-tab="productos">📦 Productos</button>
+                        <button class="admin-tab" data-tab="categorias">🏷️ Categorías</button>
+                        <button class="admin-tab" data-tab="redes">🔗 Redes Sociales</button>
+                        <button class="admin-tab" data-tab="hero">🖼️ Personalizar Inicio</button>
+                    </div>
+
+                    <!-- ============ TAB PRODUCTOS ============ -->
+                    <div id="tab-productos" class="admin-tab-content active">
+                        <form id="productForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <input type="hidden" id="editId" value="" />
+                            <div>
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" placeholder="Ej. Casco Integral Pro" required />
+                            </div>
+                            <div>
+                                <label for="categoria">Categoría</label>
+                                <select id="categoria">
+                                    <!-- Opciones dinámicas -->
+                                </select>
+                            </div>
+                            <div>
+                                <label for="precio">Precio (USD)</label>
+                                <input type="number" id="precio" step="0.01" placeholder="199.90" required />
+                            </div>
+                            <div class="file-input-wrapper">
+                                <label for="imagenFile">Imagen</label>
+                                <input type="file" id="imagenFile" accept="image/*" />
+                                <img id="imagePreview" class="image-preview hidden" alt="Vista previa" />
+                                <input type="hidden" id="imagenBase64" value="" />
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="descripcion">Descripción</label>
+                                <textarea id="descripcion" rows="2" placeholder="Descripción del producto..."></textarea>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="tallas">Tallas / Medidas (separadas por coma)</label>
+                                <input type="text" id="tallas" placeholder="S, M, L, XL" />
+                            </div>
+                            <div class="md:col-span-2 flex flex-wrap gap-3">
+                                <button type="submit" class="btn-admin"><i class="fas fa-save"></i> Guardar</button>
+                                <button type="button" id="cancelEdit" class="btn-admin btn-admin-secondary" style="display:none;">Cancelar</button>
+                            </div>
+                        </form>
+                        <h4 class="text-white font-semibold mb-2">Productos existentes</h4>
+                        <div id="adminProductList" class="max-h-64 overflow-y-auto"></div>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <button id="exportJson" class="btn-admin bg-blue-600 hover:bg-blue-700"><i class="fas fa-download"></i> Exportar</button>
+                            <button id="importJson" class="btn-admin bg-green-600 hover:bg-green-700"><i class="fas fa-upload"></i> Importar</button>
+                            <button id="resetCatalog" class="btn-admin bg-red-600 hover:bg-red-700"><i class="fas fa-undo"></i> Restaurar</button>
+                        </div>
+                        <input type="file" id="jsonFileInput" accept=".json" style="display:none;" />
+                    </div>
+
+                    <!-- ============ TAB CATEGORÍAS ============ -->
+                    <div id="tab-categorias" class="admin-tab-content">
+                        <div class="mb-6">
+                            <h4 class="text-white font-semibold mb-3 flex items-center gap-2">
+                                <i class="fas fa-tags text-[#00E5FF]"></i> Gestión de Categorías
+                            </h4>
+                            <p class="text-xs text-gray-500 mb-4">Crea, edita o elimina las categorías del catálogo.</p>
+                        </div>
+
+                        <!-- Formulario de categoría -->
+                        <form id="categoryForm" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 p-4 rounded-xl bg-[#050505] border border-[#1a1a1a]">
+                            <input type="hidden" id="editCategoryId" value="" />
+                            <div>
+                                <label for="categoryNombre">Nombre de la categoría</label>
+                                <input type="text" id="categoryNombre" placeholder="Ej. Cascos Premium" required />
+                            </div>
+                            <div>
+                                <label for="categorySlug">Identificador (slug)</label>
+                                <input type="text" id="categorySlug" placeholder="Ej. cascos-premium" required />
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="categoryColor">Color identificador</label>
+                                <div class="color-picker-wrapper">
+                                    <input type="color" id="categoryColor" value="#00E5FF" />
+                                    <input type="text" id="categoryColorText" value="#00E5FF" placeholder="#00E5FF" />
+                                </div>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="categoryDescripcion">Descripción (opcional)</label>
+                                <input type="text" id="categoryDescripcion" placeholder="Breve descripción..." />
+                            </div>
+                            <div class="md:col-span-2 flex flex-wrap gap-3">
+                                <button type="submit" class="btn-admin"><i class="fas fa-save"></i> <span id="categorySubmitText">Guardar categoría</span></button>
+                                <button type="button" id="cancelCategoryEdit" class="btn-admin btn-admin-secondary" style="display:none;">Cancelar</button>
+                            </div>
+                        </form>
+
+                        <h4 class="text-white font-semibold mb-3">Categorías existentes (<span id="categoriasCount">0</span>)</h4>
+                        <div id="adminCategoryList"></div>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <button id="resetCategorias" class="btn-admin bg-red-600 hover:bg-red-700"><i class="fas fa-undo"></i> Restaurar categorías</button>
+                        </div>
+                    </div>
+
+                    <!-- ============ TAB REDES ============ -->
+                    <div id="tab-redes" class="admin-tab-content">
+                        <form id="socialForm" class="space-y-4">
+                            <div class="social-input-group">
+                                <div class="full-width">
+                                    <label><i class="fab fa-whatsapp text-[#25D366]"></i> WhatsApp (número con código de país)</label>
+                                    <input type="text" id="whatsappLink" placeholder="Ej. 573001234567" />
+                                </div>
+                                <div>
+                                    <label><i class="fab fa-instagram text-[#E4405F]"></i> Instagram</label>
+                                    <input type="url" id="instagramLink" placeholder="https://instagram.com/tuusuario" />
+                                </div>
+                                <div>
+                                    <label><i class="fab fa-tiktok text-white"></i> TikTok</label>
+                                    <input type="url" id="tiktokLink" placeholder="https://tiktok.com/@tusuario" />
+                                </div>
+                                <div>
+                                    <label><i class="fab fa-youtube text-[#FF0000]"></i> YouTube</label>
+                                    <input type="url" id="youtubeLink" placeholder="https://youtube.com/@tucanal" />
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-admin btn-admin-success"><i class="fas fa-save"></i> Guardar cambios</button>
+                        </form>
+                    </div>
+
+                    <!-- ============ TAB HERO / PERSONALIZAR INICIO ============ -->
+                    <div id="tab-hero" class="admin-tab-content">
+                        <div class="mb-4">
+                            <h4 class="text-white font-semibold mb-2 flex items-center gap-2">
+                                <i class="fas fa-image text-[#00E5FF]"></i> Personalizar la vista de inicio (Hero)
+                            </h4>
+                            <p class="text-xs text-gray-500 mb-4">Sube una imagen o un video, o pega una URL. Este será el fondo principal que verán los clientes al entrar.</p>
+                        </div>
+
+                        <!-- Vista previa actual -->
+                        <div class="mb-6">
+                            <label class="mb-2 block">Vista previa actual</label>
+                            <div id="heroPreviewContainer" class="hero-preview-container">
+                                <div class="hero-preview-media" id="heroPreviewMedia">
+                                    <!-- Se inyecta dinámicamente -->
+                                </div>
+                                <div>
+                                    <span class="hero-media-badge" id="heroMediaTypeBadge">Imagen</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Selector de tipo: Imagen / Video / URL -->
+                        <div class="mb-4">
+                            <label>Tipo de contenido de fondo</label>
+                            <div class="flex flex-wrap gap-3 mt-1">
+                                <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-300">
+                                    <input type="radio" name="heroTipo" value="imagen" checked class="accent-[#00E5FF]" /> Imagen
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-300">
+                                    <input type="radio" name="heroTipo" value="video" class="accent-[#00E5FF]" /> Video
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-300">
+                                    <input type="radio" name="heroTipo" value="url" class="accent-[#00E5FF]" /> URL externa
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Subida de archivo -->
+                        <div id="heroFileSection" class="mb-4">
+                            <label for="heroFileInput">Subir archivo (imagen o video)</label>
+                            <input type="file" id="heroFileInput" accept="image/*,video/*" />
+                            <p class="text-xs text-gray-600 mt-1">Máx. 20MB. Formatos: JPG, PNG, GIF, MP4, WEBM.</p>
+                        </div>
+
+                        <!-- URL externa -->
+                        <div id="heroUrlSection" class="mb-4" style="display:none;">
+                            <label for="heroUrlInput">URL del recurso</label>
+                            <input type="url" id="heroUrlInput" placeholder="https://ejemplo.com/mi-video.mp4" />
+                            <p class="text-xs text-gray-600 mt-1">Pega la URL directa de una imagen o video.</p>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="flex flex-wrap gap-3 mt-6">
+                            <button id="saveHeroBtn" class="btn-admin btn-admin-success"><i class="fas fa-save"></i> Guardar fondo de inicio</button>
+                            <button id="resetHeroBtn" class="btn-admin btn-admin-secondary"><i class="fas fa-undo"></i> Restaurar fondo por defecto</button>
+                        </div>
+                        <input type="hidden" id="heroMediaData" value="" />
+                        <input type="hidden" id="heroMediaType" value="imagen" />
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Grilla de productos -->
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Renderizado desde JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="contacto" class="border-t border-[#00E5FF]/10 py-10 px-4 md:px-6 bg-[#050505]">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left flex flex-col items-center md:items-start">
+                <!-- LOGO EN FOOTER -->
+                <img src="logo-mtb.png" alt="MotoTuning Bogotá" class="logo-footer" onerror="this.style.display='none'" />
+                <span class="block text-xs text-gray-500 font-montserrat tracking-[0.2em]">BOGOTÁ · ACCESORIOS DE LUJO</span>
+            </div>
+            <div class="flex space-x-4">
+                <a id="socialInstagram" href="#" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span class="tooltip">Instagram</span>
+                </a>
+                <a id="socialTiktok" href="#" target="_blank" rel="noopener noreferrer" class="social-link" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                    <span class="tooltip">TikTok</span>
+                </a>
+                <a id="socialYoutube" href="#" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                    <span class="tooltip">YouTube</span>
+                </a>
+                <a id="socialWhatsapp" href="#" target="_blank" rel="noopener noreferrer" class="social-link" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="tooltip">WhatsApp</span>
+                </a>
+            </div>
+            <p class="text-xs text-gray-600 tracking-wider">
+                &copy; 2026 MotoTuning Bogotá – Hecho con <i class="fas fa-heart text-[#00E5FF]"></i>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ========== MODAL ========== -->
+    <div id="modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md px-4 hidden">
+        <div class="bg-[#0f0f0f] border border-[#00E5FF]/30 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 relative">
+            <button id="closeModal" class="absolute top-4 right-4 text-2xl text-gray-500 hover:text-white transition-colors z-10">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="modalContent" class="flex flex-col md:flex-row gap-6">
+                <div class="md:w-1/2">
+                    <img id="modalImg" src="" alt="Producto" class="w-full h-auto object-cover rounded-xl border border-[#00E5FF]/20" />
+                </div>
+                <div class="md:w-1/2 flex flex-col justify-between">
+                    <div>
+                        <span id="modalCategoria" class="text-xs font-bold uppercase px-3 py-1 rounded-full inline-block mb-2"></span>
+                        <h3 id="modalNombre" class="font-racing text-3xl font-bold text-white"></h3>
+                        <p id="modalPrecio" class="text-3xl font-bold text-[#00E5FF] mt-1"></p>
+                        <p id="modalDescripcion" class="text-gray-400 text-sm mt-3 leading-relaxed"></p>
+                        <div class="mt-4">
+                            <span class="text-sm font-semibold text-gray-500">Tallas disponibles:</span>
+                            <div id="modalTallas" class="flex flex-wrap gap-2 mt-2"></div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <a id="modalWhatsapp" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-3 px-6 rounded-full transition-colors">
+                            <i class="fab fa-whatsapp text-xl"></i> Pedir por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        //  CONFIGURACIÓN DE REDES SOCIALES
+        // ============================================================
+        const DEFAULT_SOCIAL = {
+            instagram: 'https://instagram.com/mototuningbogota',
+            tiktok: 'https://tiktok.com/@mototuningbogota',
+            youtube: 'https://youtube.com/@mototuningbogota',
+            whatsapp: '573001234567'
+        };
+
+        function getSocialLinks() {
+            try {
+                const stored = localStorage.getItem('mototuning_social');
+                if (stored) {
+                    const parsed = JSON.parse(stored);
+                    return { ...DEFAULT_SOCIAL, ...parsed };
+                }
+            } catch (e) { /* fallback */ }
+            localStorage.setItem('mototuning_social', JSON.stringify(DEFAULT_SOCIAL));
+            return { ...DEFAULT_SOCIAL };
+        }
+
+        function guardarSocialLinks(links) {
+            try {
+                localStorage.setItem('mototuning_social', JSON.stringify(links));
+                return true;
+            } catch (e) { return false; }
+        }
+
+        function actualizarSocialLinks() {
+            try {
+                const social = getSocialLinks();
+                const instagramLink = document.getElementById('socialInstagram');
+                const tiktokLink = document.getElementById('socialTiktok');
+                const youtubeLink = document.getElementById('socialYoutube');
+                const whatsappLink = document.getElementById('socialWhatsapp');
+                
+                if (instagramLink) instagramLink.href = social.instagram || '#';
+                if (tiktokLink) tiktokLink.href = social.tiktok || '#';
+                if (youtubeLink) youtubeLink.href = social.youtube || '#';
+                if (whatsappLink) whatsappLink.href = social.whatsapp ? `https://wa.me/${social.whatsapp}` : '#';
+                
+                return true;
+            } catch (e) {
+                console.error('Error al actualizar redes sociales:', e);
+                return false;
+            }
+        }
+
+        // ============================================================
+        //  CONFIGURACIÓN DEL HERO (FONDO DE INICIO)
+        // ============================================================
+        const DEFAULT_HERO = {
+            tipo: 'imagen', // 'imagen' | 'video' | 'url'
+            media: 'logo-mtb.png', // ruta por defecto
+            url: ''
+        };
+
+        function getHeroConfig() {
+            try {
+                const stored = localStorage.getItem('mototuning_hero');
+                if (stored) {
+                    return { ...DEFAULT_HERO, ...JSON.parse(stored) };
+                }
+            } catch (e) { /* fallback */ }
+            localStorage.setItem('mototuning_hero', JSON.stringify(DEFAULT_HERO));
+            return { ...DEFAULT_HERO };
+        }
+
+        function guardarHeroConfig(config) {
+            try {
+                localStorage.setItem('mototuning_hero', JSON.stringify(config));
+                return true;
+            } catch (e) { return false; }
+        }
+
+        function renderHeroBackground() {
+            const container = document.getElementById('heroMediaContainer');
+            if (!container) return;
+            const config = getHeroConfig();
+            let mediaHTML = '';
+
+            if (config.tipo === 'video') {
+                mediaHTML = `<video class="hero-media video" autoplay muted loop playsinline src="${escapeHtml(config.media || '')}"></video>`;
+            } else if (config.tipo === 'url') {
+                // Detectar si es video por extensión
+                const url = config.url || '';
+                const isVideo = /\.(mp4|webm|ogg)(\?|$)/i.test(url);
+                if (isVideo) {
+                    mediaHTML = `<video class="hero-media video" autoplay muted loop playsinline src="${escapeHtml(url)}"></video>`;
+                } else {
+                    mediaHTML = `<img class="hero-media" src="${escapeHtml(url || 'logo-mtb.png')}" alt="Fondo" onerror="this.style.display='none'" />`;
+                }
+            } else {
+                // imagen por defecto (base64 o ruta)
+                mediaHTML = `<img class="hero-media" src="${escapeHtml(config.media || 'logo-mtb.png')}" alt="Fondo" onerror="this.style.display='none'" />`;
+            }
+
+            container.innerHTML = mediaHTML;
+        }
+
+        // ============================================================
+        //  CATEGORÍAS POR DEFECTO
+        // ============================================================
+        const DEFAULT_CATEGORIAS = [
+            { id: 1, nombre: 'Cascos', slug: 'cascos', color: '#00E5FF', descripcion: 'Cascos integrales, modulares y abiertos' },
+            { id: 2, nombre: 'Guantes', slug: 'guantes', color: '#00E5FF', descripcion: 'Guantes de cuero y textiles para moto' },
+            { id: 3, nombre: 'Chaquetas', slug: 'chaquetas', color: '#00E5FF', descripcion: 'Chaquetas de cordura, cuero y touring' },
+            { id: 4, nombre: 'Accesorios', slug: 'accesorios', color: '#00E5FF', descripcion: 'Intercomunicadores, rodilleras y más' },
+            { id: 5, nombre: 'Escape & Performance', slug: 'escape', color: '#00E5FF', descripcion: 'Sistemas de escape y mejoras de rendimiento' }
+        ];
+
+        function getCategorias() {
+            try {
+                const stored = localStorage.getItem('mototuning_categorias');
+                if (stored) {
+                    const parsed = JSON.parse(stored);
+                    if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+                }
+            } catch (e) { /* fallback */ }
+            localStorage.setItem('mototuning_categorias', JSON.stringify(DEFAULT_CATEGORIAS));
+            return JSON.parse(JSON.stringify(DEFAULT_CATEGORIAS));
+        }
+
+        function guardarCategorias(lista) {
+            try {
+                localStorage.setItem('mototuning_categorias', JSON.stringify(lista));
+                return true;
+            } catch (e) { return false; }
+        }
+
+        // ============================================================
+        //  DATOS POR DEFECTO - PRODUCTOS
+        // ============================================================
+        const DEFAULT_PRODUCTOS = [{
+            id: 1,
+            nombre: 'Casco Integral "AeroCarbon"',
+            categoria: 'cascos',
+            precio: 349.99,
+            imagen: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=600&fit=crop&crop=center',
+            descripcion: 'Casco integral de fibra de carbono con certificación DOT/ECE. Visor ahumado y ventilación aerodinámica.',
+            tallas: ['S', 'M', 'L', 'XL']
+        }, {
+            id: 2,
+            nombre: 'Guantes Racing "ProGrip"',
+            categoria: 'guantes',
+            precio: 89.90,
+            imagen: 'https://images.unsplash.com/photo-1580828367645-4c19d1b6f9f3?w=600&h=600&fit=crop&crop=center',
+            descripcion: 'Guantes de cuero con protectores de carbono en nudillos y palma. Touchscreen compatible.',
+            tallas: ['S', 'M', 'L', 'XL']
+        }, {
+            id: 3,
+            nombre: 'Chaqueta "Urban Rider"',
+            categoria: 'chaquetas',
+            precio: 199.50,
+            imagen: 'https://images.unsplash.com/photo-1520975954732-35dd22299614?w=600&h=600&fit=crop&crop=center',
+            descripcion: 'Chaqueta de cordura impermeable con protecciones CE en hombros y codos. Forro térmico desmontable.',
+            tallas: ['S', 'M', 'L', 'XL', 'XXL']
+        }, {
+            id: 4,
+            nombre: 'Escape Deportivo "TurboFlow"',
+            categoria: 'escape',
+            precio: 459.00,
+            imagen: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=600&fit=crop&crop=center',
+            descripcion: 'Sistema de escape completo en acero inoxidable con acabado titanio. +15% potencia y sonido racing.',
+            tallas: ['Universal']
+        }, {
+            id: 5,
+            nombre: 'Intercomunicador Bluetooth "RideConnect"',
+            categoria: 'accesorios',
+            precio: 129.99,
+            imagen: 'https://images.unsplash.com/photo-1589492477829-5e65395b66cc?w=600&h=600&fit=crop&crop=center',
+            descripcion: 'Intercomunicador Bluetooth 5.0 con alcance de 1km, cancelación de ruido y batería de 12 horas.',
+            tallas: ['Universal']
+        }, {
+            id: 6,
+            nombre: 'Casco Modular "CityTour"',
+            categoria: 'cascos',
+            precio: 279.90,
+            imagen: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=600&fit=crop&crop=center',
+            descripcion: 'Casco modular con visor solar interno, mentonera abatible y sistema de ventilación dual.',
+            tallas: ['M', 'L', 'XL']
+        }, {
+            id: 7,
+            nombre: 'Rodilleras "KneeGuard Pro"',
+            categoria: 'accesorios',
+            precio: 59.90,
+            imagen: 'https://images.unsplash.com/photo-1580828367645-4c19d1b6f9f3?w=600&h=600&fit=crop&crop=center',
+            descripcion: 'Rodilleras con protección de impacto D3O y ajuste ergonómico. Ideales para uso diario.',
+            tallas: ['S/M', 'L/XL']
+        }, {
+            id: 8,
+            nombre: 'Chaqueta "Touring Premium"',
+            categoria: 'chaquetas',
+            precio: 299.00,
+            imagen: 'https://images.unsplash.com/photo-1520975954732-35dd22299614?w=600&h=600&fit=crop&crop=center',
+            descripcion: 'Chaqueta touring de cuero premium con protecciones nivel 2 y bolsillos impermeables.',
+            tallas: ['M', 'L', 'XL', 'XXL']
+        }];
+
+        function getProductos() {
+            try {
+                const stored = localStorage.getItem('mototuning_productos');
+                if (stored) {
+                    const parsed = JSON.parse(stored);
+                    if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+                }
+            } catch (e) { /* fallback */ }
+            localStorage.setItem('mototuning_productos', JSON.stringify(DEFAULT_PRODUCTOS));
+            return JSON.parse(JSON.stringify(DEFAULT_PRODUCTOS));
+        }
+
+        function guardarProductos(lista) {
+            try {
+                localStorage.setItem('mototuning_productos', JSON.stringify(lista));
+                return true;
+            } catch (e) { return false; }
+        }
+
+        // ============================================================
+        //  ESTADO GLOBAL
+        // ============================================================
+        let productosActuales = getProductos();
+        let categoriasActuales = getCategorias();
+        let filtroActual = 'todos';
+
+        // ============================================================
+        //  TOAST
+        // ============================================================
+        function showToast(mensaje, tipo = '') {
+            const toast = document.getElementById('toast');
+            toast.textContent = mensaje;
+            toast.className = 'toast ' + tipo;
+            toast.style.display = 'block';
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => {
+                toast.style.display = 'none';
+            }, 3000);
+        }
+
+        // ============================================================
+        //  HELPERS
+        // ============================================================
+        function getCategoriaBySlug(slug) {
+            return categoriasActuales.find(c => c.slug === slug);
+        }
+
+        function getCategoriaNombre(slug) {
+            const cat = getCategoriaBySlug(slug);
+            return cat ? cat.nombre : slug;
+        }
+
+        function getCategoriaColor(slug) {
+            const cat = getCategoriaBySlug(slug);
+            return cat ? cat.color : '#00E5FF';
+        }
+
+        function contarProductosPorCategoria(slug) {
+            return productosActuales.filter(p => p.categoria === slug).length;
+        }
+
+        function generarSlug(texto) {
+            return texto
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^a-z0-9\s-]/g, '')
+                .trim()
+                .replace(/\s+/g, '-')
+                .replace(/-+/g, '-');
+        }
+
+        function escapeHtml(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        // ============================================================
+        //  RENDERIZADO - FILTROS DINÁMICOS
+        // ============================================================
+        const filterContainer = document.getElementById('filterContainer');
+
+        function renderFiltros() {
+            const totalProductos = productosActuales.length;
+            let html = `<button class="filter-btn ${filtroActual === 'todos' ? 'active' : ''}" data-filter="todos">Todos (${totalProductos})</button>`;
+            
+            categoriasActuales.forEach(cat => {
+                const count = contarProductosPorCategoria(cat.slug);
+                const color = cat.color || '#00E5FF';
+                const active = filtroActual === cat.slug ? 'active' : '';
+                const activeStyle = filtroActual === cat.slug 
+                    ? `background:${color}; border-color:${color}; color:#050505; box-shadow: 0 0 20px ${color}66;` 
+                    : '';
+                html += `<button class="filter-btn ${active}" data-filter="${cat.slug}" style="${activeStyle}">${escapeHtml(cat.nombre)} (${count})</button>`;
+            });
+            
+            filterContainer.innerHTML = html;
+
+            filterContainer.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filtroActual = btn.dataset.filter;
+                    renderFiltros();
+                    renderProductos(filtroActual);
+                });
+            });
+
+            filterContainer.querySelectorAll('.filter-btn').forEach(btn => {
+                const slug = btn.dataset.filter;
+                if (slug === 'todos') return;
+                const cat = getCategoriaBySlug(slug);
+                if (!cat) return;
+                btn.addEventListener('mouseenter', () => {
+                    if (filtroActual !== slug) {
+                        btn.style.borderColor = cat.color;
+                        btn.style.color = cat.color;
+                    }
+                });
+                btn.addEventListener('mouseleave', () => {
+                    if (filtroActual !== slug) {
+                        btn.style.borderColor = '';
+                        btn.style.color = '';
+                    }
+                });
+            });
+        }
+
+        // ============================================================
+        //  RENDERIZADO - PRODUCTOS
+        // ============================================================
+        const productGrid = document.getElementById('productGrid');
+
+        function renderProductos(filtro = filtroActual) {
+            const lista = filtro === 'todos' ?
+                productosActuales :
+                productosActuales.filter(p => p.categoria === filtro);
+
+            if (lista.length === 0) {
+                productGrid.innerHTML = `
+                    <div class="col-span-full text-center py-16 text-gray-500">
+                        <i class="fas fa-motorcycle text-5xl mb-4 block opacity-30"></i>
+                        <p>No hay productos en esta categoría</p>
+                    </div>
+                `;
+                return;
+            }
+
+            productGrid.innerHTML = lista.map(p => {
+                const color = getCategoriaColor(p.categoria);
+                const nombreCat = getCategoriaNombre(p.categoria);
+                return `
+                <div class="product-card group">
+                    <div class="image-container">
+                        <img src="${escapeHtml(p.imagen)}" alt="${escapeHtml(p.nombre)}" loading="lazy" 
+                             onerror="this.src='https://via.placeholder.com/600x600/0f0f0f/00E5FF?text=Sin+Imagen'" />
+                        <span class="tag-categoria" style="color:${color}; border-color:${color};">${escapeHtml(nombreCat)}</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>${escapeHtml(p.nombre)}</h3>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="precio">$${p.precio.toFixed(2)}</span>
+                            <button class="btn-detalle" data-id="${p.id}">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            }).join('');
+
+            document.querySelectorAll('.btn-detalle').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = parseInt(e.target.dataset.id);
+                    const producto = productosActuales.find(p => p.id === id);
+                    if (producto) abrirModal(producto);
+                });
+            });
+        }
+
+        // ============================================================
+        //  MODAL
+        // ============================================================
+        const modal = document.getElementById('modal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalCategoria = document.getElementById('modalCategoria');
+        const modalNombre = document.getElementById('modalNombre');
+        const modalPrecio = document.getElementById('modalPrecio');
+        const modalDescripcion = document.getElementById('modalDescripcion');
+        const modalTallas = document.getElementById('modalTallas');
+        const modalWhatsapp = document.getElementById('modalWhatsapp');
+
+        function abrirModal(producto) {
+            try {
+                const social = getSocialLinks();
+                const color = getCategoriaColor(producto.categoria);
+                const nombreCat = getCategoriaNombre(producto.categoria);
+                
+                modalImg.src = producto.imagen;
+                modalImg.alt = producto.nombre;
+                modalImg.onerror = function() {
+                    this.src = 'https://via.placeholder.com/600x600/0f0f0f/00E5FF?text=Sin+Imagen';
+                };
+                
+                modalCategoria.textContent = nombreCat;
+                modalCategoria.style.color = color;
+                modalCategoria.style.background = color + '1a';
+                modalCategoria.style.border = `1px solid ${color}40`;
+                
+                modalNombre.textContent = producto.nombre;
+                modalPrecio.textContent = `$${producto.precio.toFixed(2)}`;
+                modalDescripcion.textContent = producto.descripcion || 'Sin descripción disponible.';
+                modalTallas.innerHTML = producto.tallas.map(t =>
+                    `<span class="bg-[#1a1a1a] px-3 py-1 rounded-full text-sm border border-[#00E5FF]/30">${escapeHtml(t)}</span>`
+                ).join('');
+                const mensaje = `Hola! Quiero pedir el producto: ${producto.nombre} ($${producto.precio.toFixed(2)}) - MotoTuning Bogotá`;
+                modalWhatsapp.href = social.whatsapp ? `https://wa.me/${social.whatsapp}?text=${encodeURIComponent(mensaje)}` : '#';
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } catch (e) {
+                console.error('Error al abrir modal:', e);
+            }
+        }
+
+        function cerrarModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        closeModalBtn.addEventListener('click', cerrarModal);
+        modal.addEventListener('click', (e) => { if (e.target === modal) cerrarModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') cerrarModal(); });
+
+        // ============================================================
+        //  NAVEGACIÓN SUAVE
+        // ============================================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const position = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: position, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ============================================================
+        //  MODO ADMIN
+        // ============================================================
+        const adminSection = document.getElementById('adminSection');
+        const adminToggle = document.getElementById('adminToggle');
+        let adminActivo = false;
+        const CONTRASENA = 'admin123';
+
+        const logoElement = document.querySelector('.logo-navbar');
+        let clickCount = 0;
+        let clickTimer = null;
+
+        function handleLogoClick(e) {
+            e.stopPropagation();
+            clickCount++;
+            if (clickCount === 1) {
+                clickTimer = setTimeout(() => { clickCount = 0; }, 500);
+            } else if (clickCount >= 2) {
+                clearTimeout(clickTimer);
+                clickCount = 0;
+                const pass = prompt('🔐 Ingresa la contraseña de administrador:');
+                if (pass === CONTRASENA) {
+                    activarAdmin(true);
+                } else if (pass !== null) {
+                    alert('❌ Contraseña incorrecta.');
+                }
+            }
+        }
+
+        if (logoElement) {
+            logoElement.addEventListener('click', handleLogoClick);
+        }
+
+        function activarAdmin(estado) {
+            adminActivo = estado;
+            if (estado) {
+                adminSection.classList.add('visible');
+                adminToggle.classList.remove('hidden');
+                adminToggle.innerHTML = '<i class="fas fa-lock"></i> <span class="hidden sm:inline">Salir</span>';
+                renderizarAdminLista();
+                renderizarAdminCategorias();
+                cargarSocialEnFormulario();
+                cargarHeroEnFormulario();
+                renderSelectCategorias();
+                showToast('🔓 Panel de administración activado', 'success');
+            } else {
+                adminSection.classList.remove('visible');
+                adminToggle.classList.add('hidden');
+                adminToggle.innerHTML = '<i class="fas fa-cog"></i> <span class="hidden sm:inline">Admin</span>';
+                productosActuales = getProductos();
+                categoriasActuales = getCategorias();
+                renderFiltros();
+                renderProductos(filtroActual);
+                showToast('🔒 Panel de administración desactivado');
+            }
+        }
+
+        adminToggle.addEventListener('click', () => {
+            if (adminActivo) activarAdmin(false);
+        });
+
+        // ============================================================
+        //  TABS DE ADMIN
+        // ============================================================
+        document.querySelectorAll('.admin-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                const tabId = this.dataset.tab;
+                document.querySelectorAll('.admin-tab-content').forEach(c => c.classList.remove('active'));
+                const target = document.getElementById('tab-' + tabId);
+                if (target) target.classList.add('active');
+                if (tabId === 'redes') {
+                    cargarSocialEnFormulario();
+                }
+                if (tabId === 'categorias') {
+                    renderizarAdminCategorias();
+                }
+                if (tabId === 'productos') {
+                    renderSelectCategorias();
+                }
+                if (tabId === 'hero') {
+                    cargarHeroEnFormulario();
+                }
+            });
+        });
+
+        // ============================================================
+        //  PANEL ADMIN: SELECT DE CATEGORÍAS EN FORM PRODUCTO
+        // ============================================================
+        function renderSelectCategorias() {
+            const select = document.getElementById('categoria');
+            const valorActual = select.value;
+            select.innerHTML = categoriasActuales.map(cat => 
+                `<option value="${cat.slug}">${escapeHtml(cat.nombre)}</option>`
+            ).join('');
+            if (categoriasActuales.some(c => c.slug === valorActual)) {
+                select.value = valorActual;
+            }
+        }
+
+        // ============================================================
+        //  PANEL ADMIN: REDES SOCIALES
+        // ============================================================
+        function cargarSocialEnFormulario() {
+            try {
+                const social = getSocialLinks();
+                document.getElementById('whatsappLink').value = social.whatsapp || '';
+                document.getElementById('instagramLink').value = social.instagram || '';
+                document.getElementById('tiktokLink').value = social.tiktok || '';
+                document.getElementById('youtubeLink').value = social.youtube || '';
+            } catch (e) {
+                console.error('Error al cargar redes en formulario:', e);
+            }
+        }
+
+        document.getElementById('socialForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            try {
+                const whatsapp = document.getElementById('whatsappLink').value.trim();
+                const instagram = document.getElementById('instagramLink').value.trim();
+                const tiktok = document.getElementById('tiktokLink').value.trim();
+                const youtube = document.getElementById('youtubeLink').value.trim();
+
+                if (whatsapp && !/^\d{10,15}$/.test(whatsapp)) {
+                    showToast('⚠️ El número de WhatsApp debe tener entre 10 y 15 dígitos, solo números.', '');
+                    return;
+                }
+
+                const socialData = {
+                    whatsapp: whatsapp || DEFAULT_SOCIAL.whatsapp,
+                    instagram: instagram || DEFAULT_SOCIAL.instagram,
+                    tiktok: tiktok || DEFAULT_SOCIAL.tiktok,
+                    youtube: youtube || DEFAULT_SOCIAL.youtube
+                };
+
+                if (guardarSocialLinks(socialData)) {
+                    actualizarSocialLinks();
+                    showToast('✅ Redes sociales actualizadas correctamente', 'success');
+                } else {
+                    showToast('❌ Error al guardar las redes sociales', '');
+                }
+            } catch (e) {
+                console.error('Error al guardar redes sociales:', e);
+                showToast('❌ Error al guardar las redes sociales', '');
+            }
+        });
+
+        // ============================================================
+        //  PANEL ADMIN: CRUD CATEGORÍAS
+        // ============================================================
+        const categoryForm = document.getElementById('categoryForm');
+        const editCategoryIdInput = document.getElementById('editCategoryId');
+        const categoryNombreInput = document.getElementById('categoryNombre');
+        const categorySlugInput = document.getElementById('categorySlug');
+        const categoryColorInput = document.getElementById('categoryColor');
+        const categoryColorTextInput = document.getElementById('categoryColorText');
+        const categoryDescripcionInput = document.getElementById('categoryDescripcion');
+        const categoryPreview = document.getElementById('categoryPreview');
+        const cancelCategoryEditBtn = document.getElementById('cancelCategoryEdit');
+        const categorySubmitText = document.getElementById('categorySubmitText');
+        const adminCategoryList = document.getElementById('adminCategoryList');
+        const categoriasCount = document.getElementById('categoriasCount');
+
+        categoryColorInput.addEventListener('input', () => {
+            categoryColorTextInput.value = categoryColorInput.value;
+            actualizarPreviewCategoria();
+        });
+        categoryColorTextInput.addEventListener('input', () => {
+            const val = categoryColorTextInput.value.trim();
+            if (/^#[0-9A-Fa-f]{6}$/.test(val)) {
+                categoryColorInput.value = val;
+            }
+            actualizarPreviewCategoria();
+        });
+
+        categoryNombreInput.addEventListener('input', () => {
+            if (!editCategoryIdInput.value) {
+                const slug = generarSlug(categoryNombreInput.value);
+                categorySlugInput.value = slug;
+            }
+            actualizarPreviewCategoria();
+        });
+
+        categorySlugInput.addEventListener('input', () => {
+            const pos = categorySlugInput.selectionStart;
+            const original = categorySlugInput.value;
+            const normalized = generarSlug(original);
+            if (original !== normalized) {
+                categorySlugInput.value = normalized;
+                categorySlugInput.setSelectionRange(pos, pos);
+            }
+            actualizarPreviewCategoria();
+        });
+
+        function actualizarPreviewCategoria() {
+            const nombre = categoryNombreInput.value.trim() || 'Categoría';
+            const color = categoryColorTextInput.value.trim() || '#00E5FF';
+            categoryPreview.textContent = nombre;
+            categoryPreview.style.color = color;
+            categoryPreview.style.borderColor = color;
+            categoryPreview.style.background = color + '15';
+        }
+
+        function limpiarFormularioCategoria() {
+            editCategoryIdInput.value = '';
+            categoryNombreInput.value = '';
+            categorySlugInput.value = '';
+            categoryColorInput.value = '#00E5FF';
+            categoryColorTextInput.value = '#00E5FF';
+            categoryDescripcionInput.value = '';
+            cancelCategoryEditBtn.style.display = 'none';
+            categorySubmitText.textContent = 'Guardar categoría';
+            actualizarPreviewCategoria();
+        }
+
+        function cargarCategoriaEnForm(cat) {
+            editCategoryIdInput.value = cat.id;
+            categoryNombreInput.value = cat.nombre;
+            categorySlugInput.value = cat.slug;
+            categoryColorInput.value = cat.color || '#00E5FF';
+            categoryColorTextInput.value = cat.color || '#00E5FF';
+            categoryDescripcionInput.value = cat.descripcion || '';
+            cancelCategoryEditBtn.style.display = 'inline-block';
+            categorySubmitText.textContent = 'Actualizar categoría';
+            actualizarPreviewCategoria();
+            categoryForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        cancelCategoryEditBtn.addEventListener('click', limpiarFormularioCategoria);
+
+        categoryForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const id = editCategoryIdInput.value ? parseInt(editCategoryIdInput.value) : null;
+            const nombre = categoryNombreInput.value.trim();
+            const slug = categorySlugInput.value.trim();
+            const color = categoryColorTextInput.value.trim();
+            const descripcion = categoryDescripcionInput.value.trim();
+
+            if (!nombre) { showToast('⚠️ El nombre es obligatorio.', ''); return; }
+            if (!slug) { showToast('⚠️ El slug es obligatorio.', ''); return; }
+            if (!/^#[0-9A-Fa-f]{6}$/.test(color)) { showToast('⚠️ El color debe ser un hexadecimal válido.', ''); return; }
+
+            const slugDuplicado = categoriasActuales.find(c => c.slug === slug && c.id !== id);
+            if (slugDuplicado) { showToast('⚠️ Ya existe una categoría con ese slug.', ''); return; }
+
+            const nombreDuplicado = categoriasActuales.find(c => c.nombre.toLowerCase() === nombre.toLowerCase() && c.id !== id);
+            if (nombreDuplicado) { showToast('⚠️ Ya existe una categoría con ese nombre.', ''); return; }
+
+            const nuevaCategoria = { id: id || Date.now(), nombre, slug, color, descripcion };
+
+            if (id) {
+                const index = categoriasActuales.findIndex(c => c.id === id);
+                if (index !== -1) {
+                    const oldSlug = categoriasActuales[index].slug;
+                    categoriasActuales[index] = nuevaCategoria;
+                    if (oldSlug !== slug) {
+                        productosActuales = productosActuales.map(p => p.categoria === oldSlug ? { ...p, categoria: slug } : p);
+                        guardarProductos(productosActuales);
+                    }
+                }
+                showToast('✅ Categoría actualizada', 'success');
+            } else {
+                categoriasActuales.push(nuevaCategoria);
+                showToast('✅ Categoría creada', 'success');
+            }
+
+            if (guardarCategorias(categoriasActuales)) {
+                limpiarFormularioCategoria();
+                renderizarAdminCategorias();
+                renderSelectCategorias();
+                renderFiltros();
+                renderProductos(filtroActual);
+                renderizarAdminLista();
+            } else {
+                showToast('❌ Error al guardar la categoría', '');
+            }
+        });
+
+        function renderizarAdminCategorias() {
+            categoriasCount.textContent = categoriasActuales.length;
+            
+            if (categoriasActuales.length === 0) {
+                adminCategoryList.innerHTML = `<div class="empty-categorias"><i class="fas fa-tags"></i><p>No hay categorías creadas</p></div>`;
+                return;
+            }
+
+            adminCategoryList.innerHTML = categoriasActuales.map(cat => {
+                const count = contarProductosPorCategoria(cat.slug);
+                const color = cat.color || '#00E5FF';
+                return `
+                    <div class="categoria-admin-item">
+                        <div class="info">
+                            <span class="color-dot" style="background:${color}; box-shadow:0 0 10px ${color}66;"></span>
+                            <div style="min-width:0; flex:1;">
+                                <div class="nombre">${escapeHtml(cat.nombre)}</div>
+                                <div style="display:flex; align-items:center; gap:0.3rem; flex-wrap:wrap; margin-top:0.2rem;">
+                                    <span class="slug">${escapeHtml(cat.slug)}</span>
+                                    ${cat.descripcion ? `<span style="font-size:0.7rem; color:#555;">${escapeHtml(cat.descripcion)}</span>` : ''}
+                                </div>
+                            </div>
+                            <span class="contador">${count} prod.</span>
+                        </div>
+                        <div class="acciones">
+                            <button class="editar" data-id="${cat.id}" title="Editar categoría"><i class="fas fa-edit"></i></button>
+                            <button class="eliminar" data-id="${cat.id}" title="Eliminar categoría" ${categoriasActuales.length <= 1 ? 'disabled' : ''}><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            adminCategoryList.querySelectorAll('.editar').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = parseInt(btn.dataset.id);
+                    const cat = categoriasActuales.find(c => c.id === id);
+                    if (cat) cargarCategoriaEnForm(cat);
+                });
+            });
+
+            adminCategoryList.querySelectorAll('.eliminar').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = parseInt(btn.dataset.id);
+                    const cat = categoriasActuales.find(c => c.id === id);
+                    if (!cat) return;
+                    const count = contarProductosPorCategoria(cat.slug);
+                    const mensaje = count > 0 ? `⚠️ Esta categoría tiene ${count} producto(s).\n\n¿Deseas continuar?` : '¿Eliminar esta categoría?';
+                    
+                    if (confirm(mensaje)) {
+                        categoriasActuales = categoriasActuales.filter(c => c.id !== id);
+                        guardarCategorias(categoriasActuales);
+                        if (filtroActual === cat.slug) filtroActual = 'todos';
+                        if (editCategoryIdInput.value == id) limpiarFormularioCategoria();
+                        renderizarAdminCategorias();
+                        renderSelectCategorias();
+                        renderFiltros();
+                        renderProductos(filtroActual);
+                        renderizarAdminLista();
+                        showToast('🗑️ Categoría eliminada');
+                    }
+                });
+            });
+        }
+
+        document.getElementById('resetCategorias').addEventListener('click', () => {
+            if (confirm('¿Restaurar las categorías predeterminadas?')) {
+                categoriasActuales = JSON.parse(JSON.stringify(DEFAULT_CATEGORIAS));
+                guardarCategorias(categoriasActuales);
+                limpiarFormularioCategoria();
+                renderizarAdminCategorias();
+                renderSelectCategorias();
+                renderFiltros();
+                renderProductos(filtroActual);
+                showToast('🔄 Categorías restauradas', 'success');
+            }
+        });
+
+        // ============================================================
+        //  PANEL ADMIN: CRUD PRODUCTOS
+        // ============================================================
+        const form = document.getElementById('productForm');
+        const editIdInput = document.getElementById('editId');
+        const nombreInput = document.getElementById('nombre');
+        const categoriaSelect = document.getElementById('categoria');
+        const precioInput = document.getElementById('precio');
+        const imagenFileInput = document.getElementById('imagenFile');
+        const imagenBase64Input = document.getElementById('imagenBase64');
+        const imagePreview = document.getElementById('imagePreview');
+        const descripcionInput = document.getElementById('descripcion');
+        const tallasInput = document.getElementById('tallas');
+        const cancelBtn = document.getElementById('cancelEdit');
+
+        imagenFileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                if (file.size > 2 * 1024 * 1024) {
+                    alert('⚠️ La imagen es demasiado grande (máximo 2MB).');
+                    imagenFileInput.value = '';
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    const base64 = ev.target.result;
+                    imagenBase64Input.value = base64;
+                    imagePreview.src = base64;
+                    imagePreview.classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            } else {
+                imagenBase64Input.value = '';
+                imagePreview.classList.add('hidden');
+                imagePreview.src = '';
+            }
+        });
+
+        function limpiarFormulario() {
+            editIdInput.value = '';
+            nombreInput.value = '';
+            if (categoriasActuales.length > 0) categoriaSelect.value = categoriasActuales[0].slug;
+            precioInput.value = '';
+            imagenFileInput.value = '';
+            imagenBase64Input.value = '';
+            imagePreview.classList.add('hidden');
+            imagePreview.src = '';
+            descripcionInput.value = '';
+            tallasInput.value = '';
+            cancelBtn.style.display = 'none';
+        }
+
+        function cargarProductoEnForm(producto) {
+            editIdInput.value = producto.id;
+            nombreInput.value = producto.nombre;
+            categoriaSelect.value = producto.categoria;
+            precioInput.value = producto.precio;
+            if (producto.imagen) {
+                imagenBase64Input.value = producto.imagen;
+                imagePreview.src = producto.imagen;
+                imagePreview.classList.remove('hidden');
+            }
+            descripcionInput.value = producto.descripcion || '';
+            tallasInput.value = producto.tallas.join(', ');
+            cancelBtn.style.display = 'inline-block';
+            imagenFileInput.value = '';
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const id = editIdInput.value ? parseInt(editIdInput.value) : null;
+            let imagenFinal = imagenBase64Input.value;
+
+            if (imagenFileInput.files.length > 0) {
+                const file = imagenFileInput.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (ev) => {
+                        imagenFinal = ev.target.result;
+                        guardarProductoConImagen(id, imagenFinal);
+                    };
+                    reader.readAsDataURL(file);
+                    return;
+                }
+            }
+            guardarProductoConImagen(id, imagenFinal);
+        });
+
+        function guardarProductoConImagen(id, imagenData) {
+            if (!imagenData && !id) { showToast('⚠️ Debes seleccionar una imagen.', ''); return; }
+
+            const nuevoProducto = {
+                id: id || Date.now(),
+                nombre: nombreInput.value.trim(),
+                categoria: categoriaSelect.value,
+                precio: parseFloat(precioInput.value) || 0,
+                imagen: imagenData || (id ? productosActuales.find(p => p.id === id)?.imagen : ''),
+                descripcion: descripcionInput.value.trim(),
+                tallas: tallasInput.value.split(',').map(t => t.trim()).filter(t => t)
+            };
+
+            if (!nuevoProducto.nombre) { showToast('⚠️ El nombre es obligatorio.', ''); return; }
+
+            if (id) {
+                const index = productosActuales.findIndex(p => p.id === id);
+                if (index !== -1) productosActuales[index] = nuevoProducto;
+            } else {
+                productosActuales.push(nuevoProducto);
+            }
+
+            if (guardarProductos(productosActuales)) {
+                limpiarFormulario();
+                renderizarAdminLista();
+                renderFiltros();
+                renderProductos(filtroActual);
+                showToast(id ? '✅ Producto actualizado' : '✅ Producto agregado', 'success');
+            } else {
+                showToast('❌ Error al guardar el producto', '');
+            }
+        }
+
+        cancelBtn.addEventListener('click', limpiarFormulario);
+
+        function renderizarAdminLista() {
+            const container = document.getElementById('adminProductList');
+            if (productosActuales.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 text-center py-4">No hay productos.</p>';
+                return;
+            }
+            container.innerHTML = productosActuales.map(p => {
+                const nombreCat = getCategoriaNombre(p.categoria);
+                const color = getCategoriaColor(p.categoria);
+                return `
+                <div class="producto-admin">
+                    <span>
+                        ${escapeHtml(p.nombre)} ($${p.precio.toFixed(2)})
+                        <span style="font-size:0.65rem; color:${color}; background:${color}15; padding:0.1rem 0.5rem; border-radius:50px; margin-left:0.5rem; border:1px solid ${color}30;">${escapeHtml(nombreCat)}</span>
+                    </span>
+                    <div class="acciones">
+                        <button class="editar" data-id="${p.id}" title="Editar"><i class="fas fa-edit"></i></button>
+                        <button class="eliminar" data-id="${p.id}" title="Eliminar"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+            `;
+            }).join('');
+
+            container.querySelectorAll('.editar').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = parseInt(btn.dataset.id);
+                    const producto = productosActuales.find(p => p.id === id);
+                    if (producto) {
+                        cargarProductoEnForm(producto);
+                        document.querySelector('.admin-tab[data-tab="productos"]').click();
+                    }
+                });
+            });
+
+            container.querySelectorAll('.eliminar').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = parseInt(btn.dataset.id);
+                    if (confirm('¿Eliminar este producto?')) {
+                        productosActuales = productosActuales.filter(p => p.id !== id);
+                        guardarProductos(productosActuales);
+                        renderizarAdminLista();
+                        renderFiltros();
+                        renderProductos(filtroActual);
+                        if (editIdInput.value == id) limpiarFormulario();
+                        showToast('🗑️ Producto eliminado');
+                    }
+                });
+            });
+        }
+
+        // ============================================================
+        //  PANEL ADMIN: PERSONALIZAR HERO (IMAGEN/VIDEO)
+        // ============================================================
+        const heroFileInput = document.getElementById('heroFileInput');
+        const heroUrlInput = document.getElementById('heroUrlInput');
+        const heroUrlSection = document.getElementById('heroUrlSection');
+        const heroFileSection = document.getElementById('heroFileSection');
+        const heroPreviewMedia = document.getElementById('heroPreviewMedia');
+        const heroMediaTypeBadge = document.getElementById('heroMediaTypeBadge');
+        const saveHeroBtn = document.getElementById('saveHeroBtn');
+        const resetHeroBtn = document.getElementById('resetHeroBtn');
+        const heroMediaDataInput = document.getElementById('heroMediaData');
+        const heroMediaTypeInput = document.getElementById('heroMediaType');
+        const heroRadioButtons = document.querySelectorAll('input[name="heroTipo"]');
+
+        function cargarHeroEnFormulario() {
+            const config = getHeroConfig();
+            
+            // Configurar radio buttons
+            heroRadioButtons.forEach(radio => {
+                radio.checked = radio.value === config.tipo;
+            });
+
+            // Mostrar/ocultar secciones
+            if (config.tipo === 'url') {
+                heroFileSection.style.display = 'none';
+                heroUrlSection.style.display = 'block';
+                heroUrlInput.value = config.url || '';
+            } else {
+                heroFileSection.style.display = 'block';
+                heroUrlSection.style.display = 'none';
+                heroUrlInput.value = '';
+            }
+
+            // Vista previa
+            actualizarPreviewHero(config);
+        }
+
+        function actualizarPreviewHero(config) {
+            if (config.tipo === 'video') {
+                if (config.media) {
+                    heroPreviewMedia.innerHTML = `<video autoplay muted loop playsinline src="${escapeHtml(config.media)}"></video>`;
+                } else {
+                    heroPreviewMedia.innerHTML = '<i class="fas fa-video"></i>';
+                }
+                heroMediaTypeBadge.textContent = 'Video';
+            } else if (config.tipo === 'url') {
+                const url = config.url || '';
+                const isVideo = /\.(mp4|webm|ogg)(\?|$)/i.test(url);
+                if (url) {
+                    if (isVideo) {
+                        heroPreviewMedia.innerHTML = `<video autoplay muted loop playsinline src="${escapeHtml(url)}"></video>`;
+                    } else {
+                        heroPreviewMedia.innerHTML = `<img src="${escapeHtml(url)}" alt="Preview" onerror="this.style.display='none'" />`;
+                    }
+                } else {
+                    heroPreviewMedia.innerHTML = '<i class="fas fa-link"></i>';
+                }
+                heroMediaTypeBadge.textContent = isVideo ? 'Video externo' : 'Imagen externa';
+            } else {
+                if (config.media) {
+                    heroPreviewMedia.innerHTML = `<img src="${escapeHtml(config.media)}" alt="Preview" onerror="this.style.display='none'" />`;
+                } else {
+                    heroPreviewMedia.innerHTML = '<i class="fas fa-image"></i>';
+                }
+                heroMediaTypeBadge.textContent = 'Imagen';
+            }
+        }
+
+        heroRadioButtons.forEach(radio => {
+            radio.addEventListener('change', () => {
+                const tipo = radio.value;
+                if (tipo === 'url') {
+                    heroFileSection.style.display = 'none';
+                    heroUrlSection.style.display = 'block';
+                } else {
+                    heroFileSection.style.display = 'block';
+                    heroUrlSection.style.display = 'none';
+                }
+            });
+        });
+
+        // Manejar subida de archivo
+        heroFileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            if (file.size > 20 * 1024 * 1024) {
+                alert('⚠️ El archivo es demasiado grande (máximo 20MB).');
+                heroFileInput.value = '';
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                const base64 = ev.target.result;
+                const tipo = document.querySelector('input[name="heroTipo"]:checked').value;
+                const config = {
+                    tipo: tipo,
+                    media: base64,
+                    url: ''
+                };
+                heroMediaDataInput.value = base64;
+                heroMediaTypeInput.value = tipo;
+                actualizarPreviewHero(config);
+            };
+            reader.readAsDataURL(file);
+        });
+
+        saveHeroBtn.addEventListener('click', () => {
+            const tipo = document.querySelector('input[name="heroTipo"]:checked').value;
+            let media = '';
+            let url = '';
+
+            if (tipo === 'url') {
+                url = heroUrlInput.value.trim();
+                if (!url) {
+                    showToast('⚠️ Ingresa una URL válida.', '');
+                    return;
+                }
+            } else {
+                // Verificar si se subió un archivo nuevo
+                if (heroFileInput.files.length > 0) {
+                    // El archivo se procesa en el evento change, pero guardamos el base64 del preview
+                    const img = heroPreviewMedia.querySelector('img, video');
+                    if (img) {
+                        media = img.src || img.getAttribute('src') || '';
+                    }
+                } else {
+                    // Usar el valor existente
+                    media = heroMediaDataInput.value || getHeroConfig().media || '';
+                }
+                if (!media) {
+                    showToast('⚠️ Debes subir un archivo o seleccionar uno existente.', '');
+                    return;
+                }
+            }
+
+            const config = { tipo, media, url };
+            if (guardarHeroConfig(config)) {
+                renderHeroBackground();
+                cargarHeroEnFormulario();
+                showToast('✅ Fondo de inicio actualizado', 'success');
+            } else {
+                showToast('❌ Error al guardar el fondo', '');
+            }
+        });
+
+        resetHeroBtn.addEventListener('click', () => {
+            if (confirm('¿Restaurar el fondo de inicio por defecto?')) {
+                guardarHeroConfig(DEFAULT_HERO);
+                renderHeroBackground();
+                cargarHeroEnFormulario();
+                showToast('🔄 Fondo restaurado', 'success');
+            }
+        });
+
+        // ============================================================
+        //  EXPORTAR / IMPORTAR / RESET
+        // ============================================================
+        document.getElementById('exportJson').addEventListener('click', () => {
+            try {
+                const dataStr = JSON.stringify(productosActuales, null, 2);
+                const blob = new Blob([dataStr], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `catalogo_mototuning_${new Date().toISOString().slice(0,10)}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+                showToast('📥 Catálogo exportado', 'success');
+            } catch (e) { showToast('❌ Error al exportar', ''); }
+        });
+
+        document.getElementById('importJson').addEventListener('click', () => {
+            document.getElementById('jsonFileInput').click();
+        });
+
+        document.getElementById('jsonFileInput').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                try {
+                    const imported = JSON.parse(ev.target.result);
+                    if (Array.isArray(imported) && imported.length > 0 && imported[0].nombre) {
+                        if (confirm('¿Sobrescribir el catálogo actual con los datos del archivo?')) {
+                            productosActuales = imported;
+                            guardarProductos(productosActuales);
+                            renderizarAdminLista();
+                            renderFiltros();
+                            renderProductos(filtroActual);
+                            showToast('📤 Catálogo importado correctamente', 'success');
+                        }
+                    } else {
+                        alert('❌ El archivo no tiene un formato válido.');
+                    }
+                } catch (err) { alert('❌ Error al leer el archivo JSON.'); }
+            };
+            reader.readAsText(file);
+            e.target.value = '';
+        });
+
+        document.getElementById('resetCatalog').addEventListener('click', () => {
+            if (confirm('¿Restaurar el catálogo a los valores predeterminados?')) {
+                localStorage.setItem('mototuning_productos', JSON.stringify(DEFAULT_PRODUCTOS));
+                productosActuales = JSON.parse(JSON.stringify(DEFAULT_PRODUCTOS));
+                renderFiltros();
+                renderProductos(filtroActual);
+                renderizarAdminLista();
+                showToast('🔄 Catálogo restaurado', 'success');
+            }
+        });
+
+        // ============================================================
+        //  INICIALIZAR
+        // ============================================================
+        try {
+            productosActuales = getProductos();
+            categoriasActuales = getCategorias();
+            renderFiltros();
+            renderProductos('todos');
+            renderSelectCategorias();
+            actualizarSocialLinks();
+            renderHeroBackground();
+            actualizarPreviewCategoria();
+            activarAdmin(false);
+
+            // Asegurar que las configuraciones existan
+            if (!localStorage.getItem('mototuning_productos')) {
+                localStorage.setItem('mototuning_productos', JSON.stringify(DEFAULT_PRODUCTOS));
+            }
+            if (!localStorage.getItem('mototuning_social')) {
+                localStorage.setItem('mototuning_social', JSON.stringify(DEFAULT_SOCIAL));
+            }
+            if (!localStorage.getItem('mototuning_categorias')) {
+                localStorage.setItem('mototuning_categorias', JSON.stringify(DEFAULT_CATEGORIAS));
+            }
+            if (!localStorage.getItem('mototuning_hero')) {
+                localStorage.setItem('mototuning_hero', JSON.stringify(DEFAULT_HERO));
+            }
+
+            console.log('🏍️ MotoTuning Bogotá – Accesorios de Lujo');
+            console.log('📌 Doble clic en el logo para administrar');
+            console.log('🔑 Contraseña: admin123');
+            console.log(`📦 ${productosActuales.length} productos cargados`);
+            console.log(`🏷️ ${categoriasActuales.length} categorías cargadas`);
+            console.log('✅ Aplicación inicializada correctamente');
+        } catch (e) {
+            console.error('❌ Error al inicializar la aplicación:', e);
+            showToast('❌ Error al cargar la aplicación', '');
+        }
+
+        // ============================================================
+        //  MANEJO DE ERRORES GLOBAL
+        // ============================================================
+        window.addEventListener('error', (e) => {
+            console.error('Error global:', e);
+        });
+    </script>
+</body>
+</html>
